@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #2C3D51;
+    font-family: Source Sans Pro;
+    font-weight: lighter;
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+}
+
+
+h1 {
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+
+.black p {
+    font-size: 20px;
+    padding: 3em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section {
+    display: block;
+    max-width: 600px;
+    background: #E74C3C;
+    margin: 0 auto 1em;
+    height: 200px;
+    position: relative;
+    border-right: .2em;
+    transform: preserve-3d;
+}
+
+
+
+
+
+
+
