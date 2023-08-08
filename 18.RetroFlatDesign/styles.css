@@ -1,0 +1,98 @@
+html {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.pixabay.com/photo/2023/03/25/19/09/runner-7876675_1280.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+}
+
+
+.nav {
+    position: absolute;
+    left: 50%;
+    top: 1%;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    list-style: none;
+    display: inline-block;
+    color: coral;
+    font-family: Raleway;
+    padding: 10px 50px;
+
+}
+
+
+
+
+.active {
+    color: #fff;
+    background: black;
+    border-radius: 4px;
+}
+
+
+.header {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+}
+
+
+.header h1 {
+    color: red;
+    font-family: 'Flash Back - Demo', sans-serif;
+    font-size: 140px ;
+}
+
+span {
+    color: black;
+}
+
+.tagline {
+    text-align: center;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+
+
+.tagline p {
+    color: red;
+    font-family: Raleway;
+    font-size: 24px;
+}
+
+.down {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.down img {
+    width: 80px;
+
+
+}
