@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script
+  src="https://code.jquery.com/jquery-3.7.0.js"
+  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Hello there!</h1>
+    </div>
+
+    <div class="welcome-section content-hidden">
+        <div class="content-wrap">
+            <ul class="fly-in-text">
+                <li>I</li>
+                <li>N</li>
+                <li>T</li>
+                <li>R</li>
+                <li>O</li>
+            </ul>
+            <a href="#" class="enter-button">Enter</a>
+        </div>
+
+
+
+        
+    </div>
+
+
+    <script>
+        const welcomeSection = document.querySelector('.welcome-section')
+const enterButton = document.querySelector('.enter-button')
+
+setTimeout( () => {
+  welcomeSection.classList.remove('content-hidden')
+}, 800)
+
+enterButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  welcomeSection.classList.add('content-hidden')
+  setTimeout( () => {
+    welcomeSection.style.opacity = 0;
+  }, 800)
+})
+    </script>
+</body> 
+
+</html>
