@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion With Js and CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Animated Accordion</h1>
+
+        <button class="accordion" type="button">Selection 1</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+        <button class="accordion" type="button">Selection 1</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+        <button class="accordion" type="button">Selection 1</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+
+        var i; 
+        for ( i=0; i < acc.length; i++){
+
+            acc[i].onclick = function() {
+                this.classList.toggle("active");
+
+                var panel = this.nextElementSibling;
+
+                if(panel.style.maxHeight) {
+
+                    panel.style.maxHeight = null;
+                }
+
+                else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+
+    </script>
+
+
+    
+</body>
+</html>
