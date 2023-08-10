@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnackBars</title>
+    <script src="app.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: url(https://img.freepik.com/premium-photo/color-gradient-background-blur-glow-yellow-blue_279525-29150.jpg) 50% 50% no-repeat;
+            background-size: cover;
+            display: table;
+            text-align: center;
+            font-family: Source Sans Pro;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 70px;
+
+
+        }
+
+
+
+        button {
+            width: 300px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            font-weight: 300;
+            color: #fff;
+            background: rgba(0,0,0,0.3);
+            font-size: 20px;
+        }
+
+
+        #snackbar {
+            min-width: 300px;
+            margin-left: -150px;
+            visibility: hidden;
+            bottom: 30px;
+            left: 50%;
+            z-index: 1;
+            text-align: center;
+            font-size: 25px;
+            position: absolute;
+            padding: 16px;
+            color: #000;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+
+        #snackbar.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes fadeout {
+            from{
+                bottom: 30px; 
+                opacity: 1;
+            }
+            to{
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+
+    </style>
+        
+   
+</head>
+<body>
+
+    <h1>Creating Snackbar</h1>
+    <button onclick="myFunction()">Show Snackbar</button>
+    <div id="snackbar">Showed Text</div>
+</body>
+</html>
