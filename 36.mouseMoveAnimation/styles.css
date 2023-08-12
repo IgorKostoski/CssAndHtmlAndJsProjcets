@@ -15,5 +15,5 @@ page-container {
     background-image: url(https://cdn.pixabay.com/photo/2020/03/18/06/06/street-4942809_1280.jpg);
     background-size: cover;
     background-position: center;
-    -webkit-filter: blur(1.2 px);
+    --webkit-filter: blur(1.2 px);
 }
