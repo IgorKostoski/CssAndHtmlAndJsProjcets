@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.5.3/lory.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></script>
+
+</head>
+<body>
+
+    <div class="carousel js-carousel">
+        <figure class="carousel__frame js-carousel__frame">
+        <div class="carousel__slides js-carousel__slides">
+            <img src="https://cdn.pixabay.com/photo/2015/05/13/01/51/alone-764926_1280.jpg" alt="" class="carousel__item">
+            <img src="https://cdn.pixabay.com/photo/2017/08/10/01/30/alley-2616862_1280.jpg" alt="" class="carousel__item">
+            <img src="https://cdn.pixabay.com/photo/2020/01/14/03/53/tokyo-4763976_1280.jpg" alt="" class="carousel__item">
+            <img src="https://cdn.pixabay.com/photo/2020/01/31/07/23/tokyo-4807294_1280.jpg" alt="" class="carousel__item">
+            <img src="https://cdn.pixabay.com/photo/2015/09/09/17/36/asia-932068_1280.jpg" alt="" class="carousel__item">
+            <img src="https://cdn.pixabay.com/photo/2017/02/11/14/45/taipei-taiwan-2057819_1280.jpg" alt="" class="carousel__item">
+        </div>
+
+        <button class="carousel__prev js-carousel__prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <button class="carousel__next js-carousel__next">
+            <i class="fas fa-chefron-right"></i>
+        </button>
+        </figure>
+    </div>
+
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    run();
+});
+
+function run() {
+    var slider = document.querySelector('.js-carousel');
+    lory(slider, {
+        infinite: 1,
+        enableMouseEvents: true, 
+        classNameFrame: 'js-carousel__frame',
+        classNameSlideContainer: 'js-carousel__slides',
+        classNamePrevCtrl: 'js-carousel__prev',
+        classNameNextCtrl: 'js-carousel__next', // Fixed the typo here
+    });
+}
+    </script>
+    
+</body>
+</html>
