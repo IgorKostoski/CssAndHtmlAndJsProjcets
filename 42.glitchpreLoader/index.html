@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Pre-Loader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="drawin_container">
+        <canvas id="canvas" width="150" height="150"></canvas>
+    </div>
+
+
+    <script >
+       function domloaded() {
+    var c = document.getElementById('canvas');
+    var ctx = c.getContext('2d');
+    var j = 0;
+    var pixSize = 2;  
+    var pixCount = 50; 
+
+    ctx.clearRect(0, 0, c.width, c.height); // Clear the canvas before drawing
+
+    for (var r = 0; r < pixCount; r++) {
+        for (var i = 0; i < pixCount; i++) {
+            if(i % pixCount ===0) {
+                j++;
+            }
+
+            ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
+            ctx.fillRect(i * pixSize, j * pixSize, 20, 20);
+        }
+    }
+}
+
+setInterval(domloaded, 150);
+
+    </script>
+    
+</body>
+</html>
