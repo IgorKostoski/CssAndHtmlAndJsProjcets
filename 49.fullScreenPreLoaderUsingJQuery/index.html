@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Preloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,700&family=Nunito:wght@400;500;600;800;1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-page">
+        <div class="counter">
+            <h1>0</h1>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+            var counter = 0;
+            var c = 0;
+            var i =setInterval(function() {
+                $(".loading-page .counter h1").html(c);
+                $(".loading-page").css("width", c + "%");
+
+                counter++;
+                c++;
+                if(counter ==101) {
+                    clearInterval(i);
+                }
+            }, 50);
+        });
+    </script>
+    
+</body>
+</html>
