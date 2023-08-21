@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greensock Animation</title>
+    
+    <!-- Include CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Include Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <p class="screen">Explore</p>
+            <div class="intro">
+                <button class="myBtn" onclick="fadeOut()">Click Me</button>
+            </div>
+        </div>
+        <div class="overlay-2"></div>
+        <div class="content">
+            <h1>Landing Page</h1>
+            <p class="data">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem molestias saepe veritatis tempore impedit voluptates corrupti nihil ullam enim culpa cum, vero deserunt aperiam nemo sunt quidem incidunt eveniet laudantium.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function fadeOut() {
+            gsap.to(".myBtn", 1, {
+                y: -100,
+                opacity: 0
+            });
+
+            gsap.to(".screen", 2, {
+                y: -400,
+                opacity: 0,
+                ease: Power2.easeInOut,
+                delay: 2
+            });
+
+            gsap.to(".overlay", 2, {
+                ease: Power2.easeInOut
+            });
+
+            gsap.to(".overlay", 2, {
+                delay: 2.6,
+                top: "-110%",
+                ease: Expo.easeInOut
+            });
+
+            gsap.to(".overlay-2", 2, {
+                delay: 3,
+                top: "-110%",
+                ease: Expo.easeInOut
+            });
+
+            gsap.to(".content", 2, {
+                delay: 3.2,
+                opacity: 0,
+                ease: Power2.easeInOut
+            });
+
+            gsap.to(".content", 2, {
+                opacity: 1,
+                y: -300,
+                delay: 3.2,
+                ease: Power2.easeInOut
+            });
+        }
+    </script>
+</body>
+</html>

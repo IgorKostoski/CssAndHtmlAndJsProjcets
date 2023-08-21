@@ -1,0 +1,116 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    cursor: crosshair;
+    font-family: 'PT Sans', sans-serif;
+    background: url(https://cdn.pixabay.com/photo/2016/11/07/18/19/notebook-paper-1806473_1280.jpg) no-repeat 50% 50%;
+}
+
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translate(0, -50%);
+    z-index: -1;
+}
+
+.content h1 {
+    font-size: 54px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #101010;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-top: 0;
+    text-align: left;
+    color: #101010;
+    font-weight: 400;
+}
+
+
+.overlay, .overlay-2 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.overlay {
+    background: #101010;
+    z-index: 1;
+}
+
+.overlay-2 {
+    background: #48A9A6;
+    z-index: 0;
+}
+
+.overlay p {
+    font-size: 300px;
+    font-weight: 800;
+}
+
+
+.screen, .myBtn {
+    font-family: 'PT Sans', sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.screen {
+    color: #323232;
+    top: 12%;
+}
+
+.myBtn {
+    top: 50%;
+}
+
+button {
+    display: block;
+    padding: 24px 48px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #fff;
+    outline: none;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: crosshair;
+    transition: 0.8s ease-out;
+}
+
+.myBtn:hover {
+    color: #101010;
+}
+
+.myBtn:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top 0.8s ease-out;
+}
+
+.myBtn:hover:before {
+    top: 0;
+}
