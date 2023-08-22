@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Changed the script and stylesheet links to use 'script' and 'link' tags respectively -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Responsive Navigation</h1>
+    <div class="toggle-btn"> <!-- Corrected the class name to "toggle-btn" -->
+        <span class="one"></span>
+        <span class="two"></span>
+    </div>
+
+    <div class="menu">
+        <div class="data">
+            <ul>
+                <li>Navigation</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var t1 = gsap.timeline({ paused: true }); // Changed "TimelineMax" to "gsap.timeline"
+
+        t1.to(".one", 0.8, {
+            y: 6,
+            rotation: 45,
+            ease: "expo.InOut" // Changed "Expo.easeInOut" to "expo.inOut"
+        });
+
+        t1.to(".two", 0.8, {
+            y: -6,
+            rotation: -45,
+            ease: "expo.InOut", // Changed "Expo.easeInOut" to "expo.inOut"
+            delay: -0.8
+        });
+
+        t1.to(".menu", 2, {
+            top: "0%",
+            ease: "expo.InOut", // Changed "Expo.easeInOut" to "expo.inOut"
+            delay: -2
+        });
+
+        t1.to(".menu ul li", 2, {
+            x: -200,
+            opacity: 0,
+            ease: "expo.out" // Changed "Expo.easeInOut" to "expo.inOut"
+        }, 0.3);
+
+        t1.reverse();
+
+        $(document).on("click", ".toggle-btn", function () {
+            t1.reversed(!t1.reversed());
+        });
+
+        $(document).on("click", "a", function () {
+            t1.reversed(!t1.reversed());
+        });
+    </script>
+    
+</body>
+</html>
