@@ -5,8 +5,37 @@
     <title>Typewriting Effect Jquery</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="t.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <pre id="main">
+codegrid<ins><span id="pow-text">---[Design Creativity]</span></ins>
+<span id="tagline">I create design related to frontEnd,<ins>1.5</ins><br>trying to envolve my creativity with every new project,<br>shaping then in elegant solutions.</span><del></del><del id="pow-trigger"></del> \\
+    </pre>
+
+    <script>
+
+$('#main').t({
+ caret:'<span style="color:hotpink;">•</span>',
+ typing:function(elm,chr){
+
+   if(chr.match(/\-trigger/))
+     $('#pow-txt').show().delay(500).fadeOut(0);
+  
+ }
+});
+
+
+
+
+
+    </script>
     
 </body>
 </html>
