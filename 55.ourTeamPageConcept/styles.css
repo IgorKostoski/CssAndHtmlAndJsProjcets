@@ -23,6 +23,20 @@ body:after {
     z-index: 0;
 }
 
+
+
+.overlay:before {
+    animation: grain 1s steps(10) infinite;
+    background-image: url();
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.48;
+    position: fixed;
+    top: -110%;
+    width: 300%;
+}
+
 @keyframes grains {
     0%, 100% {transform: translate(0,0);}
     10% {transform: translate(-5%, -10%);}
