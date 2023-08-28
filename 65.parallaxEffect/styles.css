@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #2C2F34;
+}
+
+
+
+.content {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    max-width: 1200px;
+    padding: 40px 0 40px 0;
+}
+
+
+
+.hero-back {
+    width: 100%;
+    height: calc(100vh);
+    background: url(https://cdn.pixabay.com/photo/2015/07/27/17/14/mountains-862870_1280.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+}
+
+
+h1 {
+
+
+    font-family: 'Space Grotesk', sans-serif;
+    color: #fff;
+    
+
+    
+}
+
+
+p { 
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 30px;
+    color: #fff;
+    font-weight: lighter;
+}
+
+
