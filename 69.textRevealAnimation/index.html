@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reveal Animation</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baffle.js/0.2.0/baffle.min.js" integrity="sha512-haSDSYvV1BDJYCDs52GczvTcLl3hpw8SK7isG5arkvNdHKBOcOqvl/vjO0qKNtQdZLznXA408zT0tzIamWJgrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="data">Design Style</div>
+    </div>
+    
+
+
+    <script>
+
+        const text = baffle(".data");
+        text.set({
+            characters : '<▒█ /▒>▓▒ ▒▒▒░> >▒▒ ▒<<██ ▓▓/█ ▓██ <▒▒█ ▓▓░▒',
+            speed: 120
+        });
+
+        text.start();
+        text.reveal(4000);
+    </script>
+</body>
+</html>
