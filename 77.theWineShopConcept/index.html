@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wine Shop</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap" rel="stylesheet">
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="outline"></div>
+        <div class="logo">Temjanika</div>
+        <div class="menu">
+            <ion-icon name="menu"></ion-icon>
+        </div>
+       
+
+        <div class="title">The Wine Shop</div>
+
+        <div class="tagline">As much character as the people who make them.</div>
+        
+        <div class="morewine">
+            <button>Open Up</button>
+        </div>
+       
+    </div>
+
+    <div class="wines">
+        <div id="wrap">
+            <a href="#" class="block">
+                <div class="product one">
+                    <img src="1.png" alt="">
+                    <div class="txt">
+                        <h1>Smythe Wheat</h1>
+                        <p>Price : $40</p>
+                        <div class="add">
+                            <button>Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block">
+                <div class="product two">
+                    <img src="1.png" alt="">
+                    <div class="txt">
+                        <h1>Temjanika</h1>
+                        <p>Price : $40</p>
+                        <div class="add">
+                            <button>Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block">
+                <div class="product three">
+                    <img src="1.png" alt="">
+                    <div class="txt">
+                        <h1>Temjanika Cherry</h1>
+                        <p>Price : $40</p>
+                        <div class="add">
+                            <button>Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="block">
+                <div class="product four">
+                    <img src="1.png" alt="">
+                    <div class="txt">
+                        <h1>Temjanika Rose</h1>
+                        <p>Price : $40</p>
+                        <div class="add">
+                            <button>Buy now</button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a class="close-btn">close</a>
+    </div>
+
+    <script>
+
+$(document).ready(function() {
+    var docWidth = $('body').width(),
+        $wrap = $('#wrap'),
+        $images = $('#wrap, .block'), 
+        slidesWidth = $wrap.width();
+
+    $(window).on('resize', function() {
+        docWidth = $('body').width();
+        slidesWidth = $wrap.width();
+    });
+
+    $(document).mousemove(function(e) {
+        var mouseX = e.pageX,
+            offset = mouseX / docWidth * slidesWidth - mouseX / 2;
+
+        $images.css({
+            '-webkit-transform': 'translate3d(' + -offset + 'px, 0, 0)',
+            'transform': 'translate3d(' + -offset + 'px, 0, 0)',
+        });
+    });
+});
+
+
+        var t1 = new TimelineMax({paused: true});
+
+        TweenMax.from(".logo", 0.5, {
+            opacity: 0,
+            y: 10,
+            delay: 1
+        });
+
+
+        TweenMax.from(".menu", 0.5, {
+            opacity: 0,
+            y: 10,
+            delay: 1.2
+        });
+
+        TweenMax.from(".title", 3, {
+            opacity: 0,
+            delay: 1.4
+        });
+
+
+        TweenMax.from(".tagline", 3, {
+            opacity: 0,
+            delay: 1.6
+        });
+
+
+        TweenMax.from(".morewine", 0.5, {
+            opacity: 0,
+            y: 4,
+            delay: 1.8
+        });
+
+        t1.to(".wines" ,1 ,{
+            autoAlpha: 1
+        });
+
+        t1.from(".one", 0.5, {
+            opacity: 0,
+            y: 20,
+            delay: 0.1
+        }, "-=1");
+
+        t1.from(".two", 0.5, {
+            opacity: 0,
+            y: 20,
+            delay: 0.3
+        }, "-=1");
+
+        t1.from(".three", 0.5, {
+            opacity: 0,
+            y: 20,
+            delay: 0.5
+        }, "-=1");
+
+        t1.from(".four", 0.5, {
+            opacity: 0,
+            y: 20,
+            delay: 0.7
+        }, "-=1");
+
+
+        t1.reverse();
+        $(document).on("click", ".morewine", function(){
+
+            t1.reversed(!t1.reversed());
+        });
+        $(document).on("click", "a", function(){
+
+            t1.reversed(!t1.reversed());
+        });
+        $(document).on("click", ".close-btn a", function(){
+
+            t1.reversed(!t1.reversed());
+        });
+    </script>
+
+    
+    
+    
+</body>
+</html>
