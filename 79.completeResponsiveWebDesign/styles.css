@@ -613,3 +613,88 @@ h6 {
 .image{
     background: url(https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=w8SlKv-4u6xYyU07CXeBRvfW6F0iYx-a7HR2ChM8ZbU=)no-repeat 50% 70%;
 }
+
+
+#contact-form {
+
+    margin: 5%  1.4;
+
+
+
+
+}
+
+
+.contact-form ul {
+    list-style: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+
+    
+}
+
+#contact-form li {
+    padding: 10px;
+}
+
+
+#contact-form li :last-of-type {
+    border-bottom: none;
+}
+
+
+#contact-form label {
+    display: block;
+    font-size: .8em;
+    color: #999;
+    padding-left: 5px;
+}
+
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    resize: vertical;
+    background: transparent;
+    color: #fff;
+    font-weight: bolder;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+
+}
+
+textarea:focus{
+    outline: none;
+    border: none;
+}
+
+
+.textarea {
+    border-bottom: 1px solid #dfdfdf;
+
+}
+
+
+
+
+
+
+.send {
+    margin-left: 50px;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background: transparent;
+    
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+.send:hover{
+    background: #dfdfdf;
+    color: #101010;
+}
