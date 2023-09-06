@@ -611,7 +611,7 @@ h6 {
 
 
 .image{
-    background: url(https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=w8SlKv-4u6xYyU07CXeBRvfW6F0iYx-a7HR2ChM8ZbU=)no-repeat 50% 70%;
+    background: url(https://media.istockphoto.com/id/1373158574/photo/place-of-work.jpg?s=612x612&w=0&k=20&c=B6yDBY5D1GeTgifksm2kQlBunV-qrgxc8ATn5t3hZFY=)no-repeat 50% 70%;
 }
 
 
@@ -697,4 +697,13 @@ textarea:focus{
 .send:hover{
     background: #dfdfdf;
     color: #101010;
+
+}
+
+
+@media(max-width: 768px) {
+    #contact-form{
+        margin: 5% -8%;
+        width: 98%;
+    }
 }
