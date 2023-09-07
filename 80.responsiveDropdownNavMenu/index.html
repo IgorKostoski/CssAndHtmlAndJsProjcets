@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResponsiveDropdownNavigationMenu</title>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,400;10..48,500;10..48,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <div class="hero-section">
+            <h1>Responsive Drop-down Menu Concept</h1>
+
+            <div class="menu-btn">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+
+            <div class="menu">
+                <div class="close-menu">
+                    <ion-icon name="close"></ion-icon>
+                </div>
+            </div>
+
+            <div class="nav">
+                <ul class="main-menu">
+                    <li class="main-menu-item">
+                        <a href="#">Home</a>
+                    </li>
+
+
+
+                    <li class="main-menu-item">
+                        <a href="#">Our Products &nbsp; 
+                            <ion-icon name="add">
+
+                            </ion-icon> </a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="#">Fonts</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Mockups</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Presets</a>
+                                </li>
+                            </ul>
+                       
+                    </li>
+
+                    <li class="main-menu-item">
+                        <a href="#">Portfolio &nbsp; 
+                            <ion-icon name="add">
+
+                            </ion-icon> </a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="#">Timless flow</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Fortime</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Never again</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Departure</a>
+                                </li>
+                            </ul>
+                       
+                    </li>
+                    <li class="main-menu-item">
+                        <a href="#">Our Story</a>
+                    </li>
+
+                    <li class="main-menu-item">
+                        <a href="#">Contact &nbsp; 
+                            <ion-icon name="add">
+
+                            </ion-icon> </a>
+                            <ul class="submenu">
+                                <li class="submenu-item">
+                                    <a href="#">Call now</a>
+                                </li>
+
+                                <li class="submenu-item">
+                                    <a href="#">Mail us</a>
+                                </li>
+
+                                
+                            </ul>
+                       
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="contact">
+                <p class="call">
+                    <ion-icon name="call"></ion-icon>&nbsp;&nbsp;&nbsp;+7 5948 3992
+                </p>
+                <p class="mail">
+                    <ion-icon name="mail"></ion-icon>&nbsp;&nbsp;&nbsp;demomail@demomail.com
+                </p>
+            </div>
+
+            <div class="media">
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+$(document).ready(function () {
+    $('ul.main-menu li').click(function (e) {
+        e.preventDefault();
+
+        if ($(this).siblings('li').find('ul.submenu:visible').length) {
+            $('ul.submenu').slideUp('normal');
+        }
+
+        $(this).find('ul.submenu').slideToggle('normal');
+    });
+
+    var t1 = new TimelineMax({ paused: true }); 
+
+    t1.to(".menu", 0.8, {
+        autoAlpha: 1,
+    });
+
+    t1.staggerFrom(".main-menu li a:not(.submenu li a)", 1, {
+        opacity: 0,
+        y: 10,
+        ease: Power3.easeInOut,
+    }, 0.1);
+
+    t1.from(".submenu", 0.8, {
+        autoAlpha: 0,
+    });
+
+    t1.staggerFrom(".media ul li", 1, {
+        opacity: 0,
+        y: 10,
+        ease: Power3.easeInOut,
+    }, 0.1, "-=2");
+
+    t1.from(".call", 1, {
+        delay: -2,
+        opacity: 0,
+        y: 10,
+        ease: Power3.easeInOut,
+    });
+
+    t1.from(".main", 1, {
+        delay: -1.6,
+        opacity: 0,
+        y: 10,
+        ease: Power3.easeInOut,
+    });
+
+    t1.reverse();
+    $(document).on("click", ".menu-btn", function () {
+        t1.reversed(!t1.reversed());
+    });
+
+    $(document).on("click", ".close-menu", function () {
+        t1.reversed(!t1.reversed());
+    });
+});
+    </script>
+    
+</body>
+</html>
