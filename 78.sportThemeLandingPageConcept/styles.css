@@ -1,0 +1,144 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Bricolage Grotesque', sans-serif;
+
+}
+
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+}
+
+
+.pattern {
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 100vh;
+    background: url(https://media.istockphoto.com/id/1422479114/photo/white-background-stripes-3d-wavy-pattern-elegant-abstract-striped-pattern.jpg?s=612x612&w=0&k=20&c=YA1zJ4vJPs7OoeNxTaOsHzPQwJI73NH9YYpj0hgkSBA=) no-repeat 50% 50%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+}
+
+.logo {
+    font-size: 18px;
+    margin: 0.2em 2em;
+    line-height: 80px;
+    position: absolute;
+}
+
+
+.menu {
+    position: absolute;
+    height: 80px;
+    right: 120px;
+}
+
+
+.menu ul {
+    list-style: none;
+}
+
+
+.menu ul li {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0 30px;
+    font-size: 15px;
+}
+
+
+.cart {
+    position: fixed;
+    font-size: 16px;
+    margin: 0.2em 1em;
+    line-height: 80px;
+    right: 20px;
+}
+
+
+
+.box-1 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: 2px solid orange;
+    top: 10%;
+    left: 15%;
+    z-index: -1;
+    transform: rotate(60deg);
+}
+
+
+.box-2 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: orange;
+    /* border: 2px solid orange; */
+    top: 54%;
+    left: 28%;
+    z-index: -1;
+    transform: rotate(-110deg);
+}
+
+.box-3 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: 2px solid orange;
+    top: 34%;
+    left: 78%;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.runner img {
+    width: 100%;
+    z-index: 2;
+    margin-top: -20px;
+}
+
+
+.title-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 90px;
+    color: rgba(0,0,0,0);
+    font-style: italic;
+    text-transform: uppercase;
+    z-index: -1;
+    -webkit-text-stroke: 2px orange;
+}
+
+
+.title-1 {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 90px;
+    color: rgba(0,0,0,0);
+    font-style: italic;
+    text-transform: uppercase;
+    z-index: 1;
+    /* -webkit-text-stroke: 2px orange; */
+}
+
+
