@@ -707,3 +707,18 @@ textarea:focus{
         width: 98%;
     }
 }
+
+
+.prev, .next p {
+    color: grey;
+}
+
+
+.prev p {
+    text-align: left;
+}
+
+
+.next p {
+    text-align: right;
+}
