@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    background: url(https://media.istockphoto.com/id/174956515/photo/sand.jpg?s=612x612&w=0&k=20&c=JeHSdbeqj1PA2ijmQVGOMJBz9ateILFm3kJ9Okmw9HU=) no-repeat 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.whitespace {
+    height: 300px;
+
+}
+
+
+h1 {
+    font-family: 'Phudu', cursive;
+    color: #f1Db61;
+}
+
+img {
+    width: 100%;
+}
+
+
+.txt{
+    position: relative;
+}
+
+
+.one {
+    margin-top: 100px;
+}
+
+.text-1 {
+    top: 160px;
+    left: -90px;
+}
