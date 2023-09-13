@@ -385,6 +385,62 @@
 <script>
 
 
+$(document).ready(function() {
+    // Toggle class 'on' and 'active' when #toggle is clicked
+    $("#toggle").click(function() {
+        $(this).toggleClass('on');
+        $("#resize").toggleClass("active");
+    });
+
+    // Toggle class 'on' and 'active' when any anchor element inside #resize ul li is clicked
+    $("#resize ul li a").click(function() {
+        $(this).toggleClass('on');
+        $("#resize").toggleClass("active");
+    });
+
+    // Toggle class 'on' and 'active' when any element with class .close-btn is clicked
+    $(".close-btn").click(function() {
+        $(this).toggleClass('on');
+        $("#resize").toggleClass("active");
+    });
+
+    // Toggle class 'scrolled' on the .nav element when scrolling
+    $(document).scroll(function() {
+        var $nav = $('.nav');
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+});
+
+
+new WOW().init();
+
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]') // Change this line to target href="#0"
+    .click(function(event) {
+        if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+            location.hostname == this.hostname
+        ) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function() {
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) {
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1');
+                        $target.focus();
+                    }
+                });
+            }
+        }
+    });
 
 
 
@@ -397,7 +453,11 @@
 
 
 
-    
+
+
+
+
+
 </script>
 
 
