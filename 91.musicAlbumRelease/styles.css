@@ -1,0 +1,147 @@
+html, body {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Noto Sans SC', sans-serif;
+    background: url(https://media.giphy.com/media/3oEduMhFrYvKk4giac/giphy.gif) no-repeat 50% 50%;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+.gif-overlay {
+    z-index: -1;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(14,14,14,0.8);
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+}
+
+
+.artist {
+    z-index: 2;
+    position: fixed;
+    line-height: 80px;
+    margin: 0 40px;
+    color: #fff;
+}
+
+
+.watch {
+    z-index: 2;
+    position: fixed;
+    right: 140px;
+    line-height: 80px;
+    margin: 0 40px;
+    color: grey;
+    padding: 0 10px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 4px;
+    
+}
+
+
+
+
+.watch ion-icon {
+    z-index: 2;
+    position: relative;
+    top: 1px;
+    padding-right: 6px;
+}
+
+
+
+.menu {
+    z-index: 2;
+    position: fixed;
+    right: 0;
+    font-size: 20px;
+    line-height: 80px;
+    margin: 0 40px;
+    color: #fff;
+    padding-top: 4px;
+}
+
+
+.hero-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+    height: 46vh;
+    background: url(hiphop.gif) no-repeat 50% 50%;
+    background-size: cover;
+    animation-delay: 2s;
+    -webkit-animation: animateGIF 4s cubic-bezier(0,.58,1,.58);
+}
+
+
+@-webkit-keyframes animateGIF {
+    0% {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    40%{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    100% {
+        width: 48vw;
+        height: 46vh;
+    }
+}
+
+
+.hero-title {
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode:  difference;
+}
+
+
+
+.hero-title h1 {
+    color: red;
+    text-transform: uppercase;
+    font-size: 80px;
+    margin-bottom: 0%;
+}
+
+
+.glitch {
+    position: relative;
+    
+}
+
+
+.glitch::before,
+.glitch::after {
+
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
