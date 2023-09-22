@@ -6,8 +6,90 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+    <div class="smooth-scroll-wrapper">
+        <div class="content">
+            <div class="container">
+                <h1 class="text">United Athle 2023</h1>
+                <div class="img">
+                    <img src="img-one.jpg" alt="">
+                </div>
+                <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, accusamus!</p>
+            </div>
+
+            <div class="container">
+                <h1 class="text">Enemey of boring</h1>
+                <div class="img">
+                    <img src="img-two.jpg" alt="">
+                </div>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, mollitia.</p>
+            </div>
+
+
+            <div class="container">
+                <h1 class="text">(R)evolution high</h1>
+                <div class="img">
+                    <img src="img-three.jpg" alt="">
+                </div>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, quae!</p>
+            </div>
+
+            <div class="container">
+                <h1 class="text">Groove recruit 19</h1>
+                <div class="img">
+                    <img src="img-four.jpg" alt="">
+                </div>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, est.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body,
+        scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+        height = scrollWrap.getBoundingClientRect().height - 1,
+        speed = 0.04;
+
+        var offset = 0;
+        
+        body.style.height = Math.floor(height) + "px";
+
+
+        function smoothScroll() {
+            offset += (window.pageYOffset - offset) * speed;
+
+
+            var scroll = "translateY(-" + offset + "px) translateZ(0)";
+            scrollWrap.style.transform = scroll;
+        }
+
+        smoothScroll();
+
+
+        $(function () {
+                var elements = $(".text, .img").toArray();
+                $(window).scroll(function () {
+                    elements.forEach(function (item) {
+                        if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                            $(item).addClass("reveal");
+                        }
+                    });
+                });
+                elements.forEach(function (item) {
+                    if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                        $(item).addClass("reveal");
+                    }
+                });
+            });
+
+
+    </script>
     
 </body>
 </html>
