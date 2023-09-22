@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distorted Content On Scroll</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="smooth-scroll-wrapper">
+        <div class="content">
+            <section>
+                <div>
+                    <img src="img-01.jpg" alt="">
+                    <h1>Boundary Supply</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, nostrum accusamus. Dolorem consequuntur earum eos, sequi quod possimus commodi nemo at, odio dicta saepe numquam magnam praesentium dolor laborum ipsa.</p>
+                </div>
+                <div>
+                    <img src="img-02.jpg" alt="">
+                    <h2>Runway Three</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, repellat consequatur atque rerum reprehenderit nobis optio quam officiis amet, fuga itaque aut totam, inventore facere! Obcaecati iusto libero iste quos.</p>
+                </div>
+                <div>
+                    <img src="img-03.jpg" alt="">
+                    <h3>Waste Matters</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam dolorum adipisci recusandae iusto exercitationem libero nobis. Nisi quidem magnam iusto numquam, sunt sed culpa dignissimos quisquam aut facere illo. Esse!</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <script>
+        const body = document.body, 
+            scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+            height = scrollWrap.getBoundingClientRect().height -1,
+            speed = 0.04;
+
+
+        var offset = 0;
+        body.style.height = Math.floor(height) + "px";
+
+        function smoothScroll() {
+            offset += (window.pageYOffset - offset) * speed;
+
+            var scroll = "translateY(-" + offset + "px) translateZ(0)";
+            scrollWrap.style.transform = scroll;
+
+            callScroll = requestAnimationFrame(smoothScroll);
+        }
+
+        smoothScroll();
+        const content = document.querySelector("section");
+        let currentPos = window.pageYOffset;
+
+
+        const callDistort = function () {
+            const newPos = window.pageYOffset;
+            const diff = newPos - currentPos;
+            const speed = diff * 0.35;
+
+            content.style.transform = "skewY("+ speed + "deg)";
+            currentPos = newPos;
+            requestAnimationFrame(callDistort);
+        };
+
+        callDistort();
+
+
+    </script>
+
+    
+</body>
+</html>
