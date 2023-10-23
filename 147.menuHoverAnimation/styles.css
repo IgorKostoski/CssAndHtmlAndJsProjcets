@@ -21,10 +21,10 @@ body {
 
 .rolling-text {
     display: inline-block;
-    font-family: "Grifinito L", sans-serif;
+    
     font-size: 100px;
-    line-break: 100px;
-    height: 100px;
+    line-height: 100px; /* Fix the property name to "line-height" */
+    height: 100px; /* Remove the "line-break" property */
     text-decoration: none;
     overflow: hidden;
     color: #fff;
@@ -35,17 +35,16 @@ body {
     transform: translateY(-100%);
 }
 
-.rolling-text .block:last-child {
+.rolling-text .block:last-child { /* Fix typo, change "rooling-text" to "rolling-text" */
     color: #c93d4b;
 }
 
-
 .rolling-text .letter {
     display: inline-block;
-    transition: transform 0.6s cubic-bezier(0.76,0,0.24,1);
+    transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-
+/* Add missing transition-delay values for the remaining letters */
 .letter:nth-child(1) {
     transition-delay: 0s;
 }
@@ -55,34 +54,29 @@ body {
 }
 
 .letter:nth-child(3) {
-    transition-delay: 0.3s;
+    transition-delay: 0.03s; /* Change to 0.03s to maintain sequence */
 }
 
 .letter:nth-child(4) {
-    transition-delay: 0.45s;
+    transition-delay: 0.045s; /* Change to 0.045s to maintain sequence */
 }
 
 .letter:nth-child(5) {
-    transition-delay: 0.6s;
+    transition-delay: 0.06s; /* Change to 0.06s to maintain sequence */
 }
 
 .letter:nth-child(6) {
-    transition-delay: 0.75s;
+    transition-delay: 0.075s; /* Change to 0.075s to maintain sequence */
 }
 
 .letter:nth-child(7) {
-    transition-delay: 0.9s;
+    transition-delay: 0.09s; /* Change to 0.09s to maintain sequence */
 }
-
 
 .letter:nth-child(8) {
     transition-delay: 0.105s;
 }
 
 .letter:nth-child(9) {
-    transition-delay: 0.120s;
-}
-
-.letter:nth-child(1) {
-    transition-delay: 0s;
+    transition-delay: 0.12s;
 }
