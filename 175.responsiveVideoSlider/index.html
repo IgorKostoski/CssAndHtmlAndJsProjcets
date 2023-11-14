@@ -158,6 +158,58 @@
         </a>
       </div>
     </div>
+
+    <script>
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        document
+          .querySelector(".carousel-item:first-child .carousel-caption")
+          .classList.add("animate-in");
+  
+        carouselItems.forEach((item) => {
+          item.addEventListener("transitionend", (e) => {
+            if (e.target.classList.contains("active")) {
+              const caption = e.target.querySelector(".carousel-caption");
+              if (caption) {
+                caption.classList.add("animate-in");
+              }
+            } else {
+              const caption = e.target.querySelector(".carousel-caption");
+              if (caption) {
+                caption.classList.remove("animate-in");
+              }
+            }
+          });
+        });
+  
+        // Enable swipe and drag feature for Bootstrap carousel
+        $(".carousel").on("touchstart", function (event) {
+          var xClick = event.originalEvent.touches[0].pageX;
+          $(this).one("touchmove", function (event) {
+            var xMove = event.originalEvent.touches[0].pageX;
+            if (Math.floor(xClick - xMove) > 5) {
+              $(this).carousel("next");
+            } else if (Math.floor(xClick - xMove) < -5) {
+              $(this).carousel("prev");
+            }
+          });
+          $(this).on("touchend", function () {
+            $(this).off("touchmove");
+          });
+        });
+  
+        // // Enable swipe and drag feature for Bootstrap carousel
+        $(".carousel").on("mousedown", function (event) {
+          var xClick = event.pageX;
+          $(this).one("mouseup", function (event) {
+            var xMove = event.pageX;
+            if (Math.floor(xClick - xMove) > 5) {
+              $(this).carousel("next");
+            } else if (Math.floor(xClick - xMove) < -5) {
+              $(this).carousel("prev");
+            }
+          });
+        });
+      </script>
     
 </body>
 </html>
