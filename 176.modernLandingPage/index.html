@@ -68,6 +68,40 @@
         <div class="blob-2 blob"></div>
         <div class="blob-3 blob">+</div>
       </div>
+
+      <script>
+        gsap.from(".nav-container", 2, {
+          opacity: 0,
+          y: -60,
+          ease: "power3.inOut",
+          delay: 0.5,
+        });
+  
+        gsap.from(".hero > *", 1, {
+          opacity: 0,
+          y: 60,
+          ease: "power3.inOut",
+          delay: 1,
+          stagger: {
+            amount: 0.5,
+          },
+        });
+  
+        gsap.from(".blob", 2, {
+          scale: 0,
+          ease: "power3.inOut",
+          delay: 1.5,
+          stagger: {
+            amount: 0.5,
+          },
+        });
+  
+        gsap.from(".bg-gradient", 2, {
+          scale: 0,
+          ease: "power3.inOut",
+          delay: 2,
+        });
+      </script>
     
 </body>
 </html>
