@@ -102,4 +102,79 @@
       </div>
     
 </body>
+
+<script>
+    const tl = gsap.timeline({ paused: true });
+
+function showInfo() {
+  revealDescription();
+
+  const showBtn = document.getElementById("measurements");
+  showBtn.onclick = function (e) {
+    tl.reversed(!tl.reversed());
+  };
+
+  const closeBtn = document.getElementById("close");
+  closeBtn.onclick = function (e) {
+    tl.reversed(!tl.reversed());
+  };
+}
+
+showInfo();
+
+function revealDescription() {
+  tl.to(".product-description", 1, {
+    bottom: 0,
+    ease: "power2.inOut",
+  });
+
+  tl.to(
+    ".overlay",
+    1,
+    {
+      opacity: 1,
+      ease: "power2.inOut",
+    },
+    "-=1"
+  );
+
+  tl.to(
+    ".product-hero",
+    1,
+    {
+      bottom: "55vh",
+      ease: "power2.inOut",
+    },
+    "-=0.9"
+  ).reverse();
+}
+
+gsap.from(".nav > *", 1, {
+  y: 60,
+  opacity: 0,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.2,
+  },
+});
+
+gsap.from(".product-hero > div, .product-info", 1, {
+  y: 60,
+  opacity: 0,
+  ease: "power4.inOut",
+  stagger: {
+    amount: 0.4,
+  },
+});
+
+gsap.from(".product-look img", 2, {
+  x: 100,
+  opacity: 0,
+  ease: "power3.inOut",
+  delay: 0.5,
+  stagger: {
+    amount: 0.4,
+  },
+});
+</script>
 </html>
