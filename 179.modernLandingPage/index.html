@@ -75,6 +75,77 @@
    
         </section>
       </div>
+
+
+      <script>
+
+
+
+gsap.from(".letter", 2, {
+        top: "100px",
+        ease: "power4.inOut",
+        stagger: {
+          amount: 0.5,
+        },
+      });
+      gsap.to(".a2", 1, {
+        top: "20px",
+        ease: "power2.inOut",
+        delay: 3,
+      });
+
+      gsap.to(".header", 4, {
+        scale: "2",
+        ease: "power2.inOut",
+        delay: 4,
+      });
+
+      gsap.to(".circle", 1, {
+        opacity: 1,
+        ease: "power1.inOut",
+        delay: 4,
+      });
+
+      gsap.to("span", 2, {
+        opacity: 0,
+        ease: "power1.inOut",
+        delay: 4.5,
+      });
+
+      gsap.to(".circle", 3, {
+        scale: 10,
+        ease: "power1.inOut",
+        backgroundColor: "#aac728",
+        stagger: {
+          amount: 0.75,
+        },
+        delay: 6,
+      });
+
+      gsap.to(".a .circle", 3, {
+        top: "48px",
+        left: "-180px",
+        ease: "power1.inOut",
+        delay: 6,
+      });
+
+      gsap.to(".y .circle", 3, {
+        top: "48px",
+        left: "180px",
+        ease: "power1.inOut",
+        delay: 6.5,
+      });
+
+      // extra stuff 
+
+      gsap.from(".nav-items > *, .menu-toggle, .bottom-nav > *", 1.4, {
+      opacity: 0,
+      x: 40,
+      ease: "power3.inOut",
+      delay: 7,
+      stagger: 0.2,
+    });
+      </script>
     
 </body>
 </html>
