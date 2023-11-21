@@ -32,6 +32,26 @@
             strokeWidth: 1.5,
             power: false,
         };
+
+        c.width = opt.width *2;
+        c.height = opt.height *2;
+        c.style.width = opt.width;
+        c.style.height = opt.height;
+
+        const ctx = c.getContext("2d");
+        ctx.scale(2, 2);
+
+        ctx.strokeStyle = opt.strokeColor;
+        ctx.lineWidth = opt.strokeWidth;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round"
+
+
+        let time = 0;
+
+        const render = () => {
+            
+        }
       </script>
     
 </body>
