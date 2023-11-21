@@ -12,6 +12,27 @@
     <div class="container">
         <canvas></canvas>
       </div>
+
+      <audio id="audio" src="./song.mp3"></audio>
+
+      <script>
+        const c = document.querySelector("canvas");
+        const audio = document.querySelector("#audio");
+
+
+        let opt = {
+            width: c.offsetWidth,
+            height: c.offsetHeight,
+            midY: c.offsetHeight / 2,
+            points: 80,
+            stretch: 10,
+            sinHeight: 0,
+            speed: -0.1,
+            strokeColor: "black",
+            strokeWidth: 1.5,
+            power: false,
+        };
+      </script>
     
 </body>
 </html>
