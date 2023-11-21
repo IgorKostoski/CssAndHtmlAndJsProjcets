@@ -50,8 +50,58 @@
         let time = 0;
 
         const render = () => {
-            
+
+            window.requestAnimationFrame(render);
+            ctx.clearRect(0,0, opt.width, opt.height);
+
+            time += 1;
+            ctx.beginPath();
+
+            let increment = 0;
+
+            for ( i =0; i <= opt.points; i++) {
+                if(i < opt.points/2) {
+                    increment += 0.1;
+                } else {
+                    increment += -0.1;
+                }
+
+                const x = (opt.width / opt.points) * i;
+                const y = 
+                    opt.midY +
+                    Math.sin(time * opt.speed + i / opt.stretch) *
+                    opt.sinHeight *
+                    increment;
+
+                    ctx.lineTo(x,y);
+            }
+
+            ctx.storke();
+
+
+        };
+        render();
+
+        c.addEventListener("click", () => {
+        opt.power = !opt.power;
+
+        if (opt.power) {
+          audio.play();
+          TweenMax.to(opt, 1, {
+            sinHeight: 4,
+            stretch: 5,
+            ease: Power2.easeInOut,
+          });
+        } else {
+          audio.pause();
+          TweenMax.to(opt, 1, {
+            sinHeight: 0,
+            stretch: 10,
+            ease: Power3.easeOut,
+          });
         }
+        console.log(opt.power);
+      });
       </script>
     
 </body>
